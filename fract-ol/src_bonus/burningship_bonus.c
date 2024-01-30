@@ -6,7 +6,7 @@
 /*   By: dparada <dparada@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:05:41 by dparada           #+#    #+#             */
-/*   Updated: 2024/01/29 16:31:06 by dparada          ###   ########.fr       */
+/*   Updated: 2024/01/30 14:15:32 by dparada          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	burningship_iters(t_fractol *info)
 	info->z_r = 0.0;
 	while (iters < info->max_iter && ft_mod(info->z_r, info->z_i) <= 4.0)
 	{
-		temp = (info->z_r * info->z_r - info->z_i * info->z_i) - info->c_r;
+		temp = (info->z_r * info->z_r - info->z_i * info->z_i) + info->c_r;
 		info->z_i = fabs(2.0 * info->z_r * info->z_i) - info->c_i;
 		info->z_r = temp;
 		iters++;
